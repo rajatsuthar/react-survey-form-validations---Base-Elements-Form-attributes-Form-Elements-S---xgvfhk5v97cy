@@ -142,7 +142,7 @@ function App() {
         </div>
 
         <div className="col-12">
-          <button className="btn btn-primary" type="submit">
+          <button className="btn btn-primary" type="submit" onClick="validate()">
             Submit form
           </button>
         </div>
