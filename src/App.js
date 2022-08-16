@@ -142,7 +142,28 @@ function App() {
         </div>
 
         <div className="col-12">
-          <button className="btn btn-primary" type="submit" onClick="validate()">
+          <button className="btn btn-primary" type="submit" onClick={()=>{
+              const firstName = document.getElementById('first-name').value;
+              const lastName = document.getElementById('last-name').value;
+              const username = document.getElementById('username').value;
+              const email = document.getElementById('email').value;
+              const contact = document.getElementById('contact').value;
+              const postalCode = document.getElementById('postal-code').value;
+              if (!/^[A-Za-z]+$/.test(firstName)) {
+                window.alert('Enter valid first name!');
+              } else if (!/^[A-Za-z]+$/.test(lastName)) {
+                window.alert('Enter valid last name!');
+              } else if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+                window.alert('Enter valid username!');
+              } else if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+                window.alert('Enter valid email!');
+              } else if (!/^[0-9]{10}$/.test(contact)) {
+                window.alert('Enter valid contact!');
+              } else if (!/^[0-9]{6}$/.test(postalCode)) {
+                window.alert('Enter valid postal code!');
+              } else window.alert('Submitted');
+          
+          }}>
             Submit form
           </button>
         </div>
